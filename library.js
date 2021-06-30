@@ -71,15 +71,15 @@ function libraryFormSubmit(e) {
 
     console.log(book);
     let display = new Display();
- if (disply.validate(book)) {
-     display.add(book);
-     display.clear();
-     display.show("success")
+         display.add(book);
+              display.clear();
+         //  if (disply.validate(book)) {
+//      display.show("success")
      
- } else {
-     display.show(error)
+//  } else {
+//      display.show(error)
      
- }
+//  }
 
 
 }
