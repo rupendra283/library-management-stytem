@@ -73,13 +73,13 @@ function libraryFormSubmit(e) {
     let display = new Display();
          display.add(book);
               display.clear();
-          if (disply.validate(book)) {
-     display.show("success")
+//           if (disply.validate(book)) {
+//      display.show("success")
      
- } else {
-     display.show(error)
+//  } else {
+//      display.show(error)
      
- }
-
+//  }
+dsfsdfgit 
 
 }
