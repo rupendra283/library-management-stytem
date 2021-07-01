@@ -11,7 +11,7 @@ function Book(name, author, type) {
 
 //display constructor
 function Display() {
-    
+
 }
 
 //add method to display prototype
@@ -24,26 +24,40 @@ Display.prototype.add = function (book) {
                 <td> ${book.author} </td>
                 <td> ${book.type} </td>
                         </tr>`;
-            tableBody.innerHTML += uiString;
-            }
+    tableBody.innerHTML += uiString;
+}
 
 Display.prototype.clear = function () {
-let libraryForm = document.getElementById("libraryForm");
-libraryForm.reset();
-    
+    let libraryForm = document.getElementById("libraryForm");
+    libraryForm.reset();
+
 }
 
 Display.prototype.validate = function (book) {
-if (book.name.length<2 || book.author.length<2)
-{
- return false;
-}
-else{
-    return true;
-}
+    if (book.name.length < 2 || book.author.length < 2) {
+        return false;
+    }
+    else {
+        return true;
+    }
 }
 
- 
+Display.prototype.show = function (type, displaymessage) {
+    let message = document.getElementById("message");
+    message.innerHTML = ` <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                                <strong>Message!</strong>${displaymessage}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>`
+    setTimeout(function () {
+        message.innerHTML = ""
+
+    }, 2000);
+
+}
+
+
 let libraryForm = document.getElementById("libraryForm");
 libraryForm.addEventListener('submit', libraryFormSubmit);
 
@@ -71,15 +85,15 @@ function libraryFormSubmit(e) {
 
     console.log(book);
     let display = new Display();
-         display.add(book);
-              display.clear();
-//           if (disply.validate(book)) {
-//      display.show("success")
-     
-//  } else {
-//      display.show(error)
-     
-//  }
-dsfsdfgit 
+    display.clear();
+
+    if (display.validate(book)) {
+        display.add(book);
+        display.show('success', "your book has been suuccesful added")
+
+    } else {
+        display.show('danger', "sorry you can not add this no")
+
+    }
 
 }
