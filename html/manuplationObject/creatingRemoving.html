@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="heading">Welcome To the Dom tutorial</h1>
+        <div id="myfirst" class ="child red good" id="first">Child1</div>
+        <ul class="this">
+            <li class="child1">this</li>
+            <li class="child1">is</li>
+            <li class="child1">list</li>
+            <li class="child1">of</li>
+            <li class="child1">my dream</li>
+        </ul>
+        <input type="text" name="nitem" id="item">
+        <button class="button" onclick="appendLi()" >Add Item</button>
+        <button onclick="removeItem()">Delete row</button>
+
+        <div class ="child1"><b>Child2</b></div>
+        <div class ="child1">Child3</div>
+        <div class ="child4">Child4</div>
+        <form acttion ="none.html" method="POST">
+            <a href="index.html"></a>
+          name:  <input type="button" value="submit">
+        </form>
+
+    </div>
+    <div class="container1">
+        <h1 id="heading">Welcome To the Dom tutorial</h1>
+        <div id="myfirst" class ="child red good" id="first">Child1</div>
+        <div class ="child1"><b>Child2</b></div>
+        <div class ="child1">Child3</div>
+        <div class ="child4">Child4</div>
+        <form acttion ="none.html" method="POST">
+            <a href="index.html"></a>
+          name:  <input type="button" value="submit">
+        </form>
+
+    </div>
+    <script>
+        function appendLi(){
+            let input = document.getElementById('item');
+            console.log(input);
+
+            let element = document.createElement("li");
+            element.className="child1 child2"; 
+            element.id="createdli";
+            element.setAttribute("title","myitle");
+            element.innerHTML= input.value;
+            // element.innerText= '<b>this is rupendra</b>';
+    
+            let ul = document.querySelector("ul.this")
+            ul.appendChild(element)
+            input.value = '';
+            console.log(ul);
+            
+        }
+        
+        function removeItem() {
+                let menu= document.querySelector("ul.this");
+                console.log(menu);
+                menu.removeChild(menu.lastElementChild);
+           
+                console.log(menu);
+        }
+
+
+
+
+    </script>
+</body>
+</html>
